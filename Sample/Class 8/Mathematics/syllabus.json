@@ -1,0 +1,74 @@
+{
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "chapter": "1",
+      "title": "A SQUARE AND A CUBE",
+      "topics": [
+        "1.1 Square Numbers",
+        "1.2 Cubic Numbers",
+        "1.3 A Pinch of History"
+      ]
+    },
+    {
+      "chapter": "2",
+      "title": "POWER PLAY",
+      "topics": [
+        "2.2 Exponential Notation and Operations",
+        "2.3 The Other Side of Powers",
+        "2.4 Powers of 10"
+      ]
+    },
+    {
+      "chapter": "3",
+      "title": "A STORY OF NUMBERS",
+      "topics": [
+        "3.2 Some Early Number Systems",
+        "3.3 The Idea of a Base"
+      ]
+    },
+    {
+      "chapter": "4",
+      "title": "4.1 Rectangles and Squares",
+      "topics": [
+        "4.1 Rectangles and Squares",
+        "4.2 Angles in a Quadrilateral",
+        "4.3 More Quadrilaterals with Parallel Opposite Sides",
+        "4.4 Quadrilaterals with Equal Sidelengths",
+        "4.5 Playing with Quadrilaterals",
+        "4.6 Kite and Trapezium"
+      ]
+    },
+    {
+      "chapter": "5",
+      "title": "NUMBER PLAY",
+      "topics": [
+        "5.1 Is This a Multiple Of?",
+        "5.2 Checking Divisibility Quickly",
+        "5.3 Digits in Disguise"
+      ]
+    },
+    {
+      "chapter": "6",
+      "title": "Some Properties of Multiplication",
+      "topics": [
+        "6.1 Some Properties of Multiplication",
+        "6.2 Special Cases of the Distributive Property",
+        "6.3 Mind the Mistake, Mend the Mistake",
+        "6.4 This Way or That Way, All Ways Lead to the Bay"
+      ]
+    },
+    {
+      "chapter": "7",
+      "title": "PROPORTIONAL REASONING-1",
+      "topics": [
+        "7.1 Observing Similarity in Change",
+        "7.2 Ratios",
+        "7.3 Ratios in their Simplest Form",
+        "7.4 Problem Solving with Proportional Reasoning",
+        "7.5 Sharing, but Not Equally!",
+        "7.6 Unit Conversions"
+      ]
+    }
+  ]
+}

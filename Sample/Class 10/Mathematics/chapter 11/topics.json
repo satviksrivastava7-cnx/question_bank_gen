@@ -1,0 +1,34 @@
+{
+  "chapter_name": "chapter 11",
+  "total_topics": 7,
+  "topics": [
+    {
+      "topic": "Introduction to Sectors and Segments",
+      "content": "A sector of a circle is the portion of the circular region enclosed by two radii and the corresponding arc. A segment of a circle is the portion of the circular region enclosed between a chord and the corresponding arc. The shaded region OAPB is a sector of the circle with centre O. ∠ AOB is called the angle of the sector. OAPB is called the minor sector and OAQB is called the major sector. The angle of the major sector is 360° - ∠ AOB. In Fig. 11.2, APB is a segment of the circle formed by the chord AB. APB is called the minor segment and AQB is called the major segment. When 'segment' and 'sector' are used without qualification, they refer to the 'minor segment' and 'minor sector' respectively."
+    },
+    {
+      "topic": "Area of a Sector",
+      "content": "The area of a sector of a circle with radius r and angle θ (in degrees) is given by the formula: Area of the sector = \n$(\\theta / 360) \\times \\pi r^{2}$. This formula is derived using the unitary method, considering the entire circle (360°) has an area of \\pi r^2.\nExample 1 calculates the area of a sector with radius 4 cm and angle 30° as approximately 4.19 cm^2. It also calculates the area of the corresponding major sector."
+    },
+    {
+      "topic": "Length of an Arc",
+      "content": "The length of an arc of a sector of a circle with radius r and angle θ (in degrees) is given by the formula: Length of arc = $(\\theta / 360) \\times 2 \\pi r$. This is also derived using the unitary method, considering the circumference of the circle (360°) as 2\\pi r."
+    },
+    {
+      "topic": "Area of a Segment",
+      "content": "The area of a segment of a circle is calculated by subtracting the area of the corresponding triangle from the area of the corresponding sector. Area of the segment APB = Area of the sector OAPB - Area of △ OAB.\nExample 2 demonstrates finding the area of a segment. For a circle with radius 21 cm and ∠ AOB = 120°, the area of the segment is calculated as (462 - 441/4 √3) cm^2."
+    },
+    {
+      "topic": "Formulas and Relationships",
+      "content": "Area of the major sector OAQB = π r^2 - Area of the minor sector OAPB.\nArea of major segment AQB = π r^2 - Area of the minor segment APB."
+    },
+    {
+      "topic": "Exercises and Applications",
+      "content": "The chapter includes Exercise 11.1 with problems involving calculating areas of sectors and segments in various contexts, such as:\n- Sectors with given radius and angle.\n- Quadrants of a circle.\n- Area swept by clock hands.\n- Segments and sectors corresponding to chords subtending right angles or other angles at the center.\n- Grazing area of a horse tied with a rope.\n- Design of a brooch made with wire.\n- Area between consecutive ribs of an umbrella.\n- Area cleaned by car wipers.\n- Warning area of a lighthouse.\n- Cost of making designs on a round table cover.\n- A multiple-choice question on the formula for the area of a sector."
+    },
+    {
+      "topic": "Chapter Summary",
+      "content": "Key points studied in this chapter include:\n1. Length of an arc of a sector: $(\\theta / 360) \\times 2 \\pi r$\n2. Area of a sector: $(\\theta / 360) \\times \\pi r^{2}$\n3. Area of a segment: Area of the corresponding sector - Area of the corresponding triangle."
+    }
+  ]
+}

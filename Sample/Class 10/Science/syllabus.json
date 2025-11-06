@@ -1,0 +1,210 @@
+{
+  "subject": "Science",
+  "chapters": [
+    {
+      "chapter": "1",
+      "title": "Chemical Reactions and Equations",
+      "topics": [
+        "1.1 CHEMICAL EQUATIONS",
+        "1.1 Writing a Chemical Equation",
+        "1.2 Balanced Chemical Equations",
+        "1.2 TYPES OF CHEMICAL REACTIONS",
+        "2.1 Combination Reaction",
+        "2.2 Decomposition Reaction",
+        "2.3 Displacement Reaction",
+        "2.4 Double Displacement Reaction",
+        "2.5 Oxidation and Reduction",
+        "1.3 HAVE YOU OBSERVED THE EFFECTS OF OXIDATION REACTIONS IN EVERYDAY LIFE?",
+        "3.1 Corrosion",
+        "3.2 Rancidity"
+      ]
+    },
+    {
+      "chapter": "2",
+      "title": "CHAPTER 2",
+      "topics": [
+        "2.1 UNDERSTANDING THE CHEMICAL PROPERTIES OF ACIDS AND BASES",
+        "1.1 Acids and Bases in the Laboratory",
+        "1.2 How do Acids and Bases React with Metals?",
+        "1.3 How do Metal Carbonates and Metal Hydrogencarbonates React with Acids?",
+        "1.4 How do Acids and Bases React with each other?",
+        "1.5 Reaction of Metallic Oxides with Acids",
+        "1.6 Reaction of a Non-metallic Oxide with Base",
+        "2.2 WHAT DO ALL ACIDS AND ALL BASES HAVE IN COMMON?",
+        "2.1 What Happens to an Acid or a Base in a Water Solution?",
+        "2.3 HOW STRONG ARE ACID OR BASE SOLUTIONS?",
+        "3.1 Importance of pH in Everyday Life",
+        "2.4 MORE ABOUT SALTS",
+        "4.1 Family of Salts",
+        "4.2 pH of Salts",
+        "4.3 Chemicals from Common Salt",
+        "4.4 Are the Crystals of Salts really Dry?"
+      ]
+    },
+    {
+      "chapter": "3",
+      "title": "Metals and Non-metals",
+      "topics": [
+        "3.1 PHYSICAL PROPERTIES",
+        "1.1 Metals",
+        "3.2 CHEMICAL PROPERTIES OF METALS",
+        "3.3 HOW DO METALS AND NON-METALS REACT?",
+        "3.4 OCCURRENCE OF METALS",
+        "3.5 CORROSION"
+      ]
+    },
+    {
+      "chapter": "4",
+      "title": "Carbon and its Compounds",
+      "topics": [
+        "4.1 BONDING IN CARBON - THE COVALENT BOND",
+        "4.2 VERSATILE NATURE OF CARBON",
+        "2.1 Saturated and Unsaturated Carbon Compounds",
+        "2.2 Chains, Branches and Rings",
+        "2.4 Homologous Series",
+        "2.5 Nomenclature of Carbon Compounds",
+        "4.3 CHEMICAL PROPERTIES OF CARBON COMPOUNDS",
+        "3.1 Combustion",
+        "3.2 Oxidation",
+        "3.3 Addition Reaction",
+        "3.4 Substitution Reaction",
+        "4.4 SOME IMPORTANT CARBON COMPOUNDS - ETHANOL AND ETHANOIC ACID",
+        "4.1 Properties of Ethanol",
+        "4.2 Properties of Ethanoic Acid",
+        "4.5 SOAPS AND DETERGENTS"
+      ]
+    },
+    {
+      "chapter": "5",
+      "title": "CHAPTER 5 Life Processes",
+      "topics": [
+        "5.1 WHAT ARE LIFE PROCESSES?",
+        "5.2 NUTRITION",
+        "2.1 Autotrophic Nutrition",
+        "2.2 Heterotrophic Nutrition",
+        "2.3 How do Organisms obtain their Nutrition?",
+        "2.4 Nutrition in Human Beings",
+        "5.3 RESPIRATION",
+        "5.8 Break-down of glucose by various pathways",
+        "5.9 Human respiratory system",
+        "5.4 TRANSPORTATION",
+        "4.1 Transportation in Human Beings",
+        "4.2 Transportation in Plants",
+        "5.5 EXCRETION",
+        "5.1 Excretion in Human Beings",
+        "5.2 Excretion in Plants"
+      ]
+    },
+    {
+      "chapter": "6",
+      "title": "Control and Coordination",
+      "topics": [
+        "6.1 ANIMALS - NERVOUS SYSTEM",
+        "6.2 COORDINATION IN PLANTS",
+        "6.3 HORMONES IN ANIMALS",
+        "6.2 Reflex arc",
+        "6.3 Human brain",
+        "6.4 The sensitive plant",
+        "6.5\nResponse of the plant to the direction of light",
+        "6.6 Plant showing geotropism",
+        "6.7 Endocrine glands in human beings (a) male, (b) female"
+      ]
+    },
+    {
+      "chapter": "7",
+      "title": "CHAPTER 7 How do Organisms Reproduce?",
+      "topics": [
+        "7.1 DO ORGANISMS CREATE EXACT COPIES OF THEMSELVES?",
+        "1.1 The Importance of Variation",
+        "7.2 MODES OF REPRODUCTION USED BY SINGLE ORGANISMS",
+        "2.1 Fission",
+        "2.2 Fragmentation",
+        "2.3 Regeneration",
+        "7.3 Regeneration in Planaria",
+        "2.4 Budding",
+        "7.4 Budding in Hydra",
+        "2.6 Spore Formation",
+        "7.3 SEXUAL REPRODUCTION",
+        "3.1 Why the Sexual Mode of Reproduction?",
+        "3.3 Reproduction in Human Beings",
+        "7.10 Human-male reproductive system",
+        "7.11 Human-female reproductive system"
+      ]
+    },
+    {
+      "chapter": "8",
+      "title": "Heredity",
+      "topics": [
+        "8.2 HEREDITY"
+      ]
+    },
+    {
+      "chapter": "9",
+      "title": "CHAPTER 9",
+      "topics": [
+        "9.1 REFLECTION OF LIGHT",
+        "9.2 SPHERICAL MIRRORS",
+        "9.3 REFRACTION OF LIGHT"
+      ]
+    },
+    {
+      "chapter": "10",
+      "title": "The Human Eye and the Colourful World",
+      "topics": [
+        "10.1 THE HUMAN EYE",
+        "1.1 Power of Accommodation",
+        "10.2 DEFECTS OF VISION AND THEIR CORRECTION",
+        "10.3 REFRACTION OF LIGHT THROUGH A PRISM",
+        "10.4 DISPERSION OF WHITE LIGHT BY A GLASS PRISM",
+        "10.5 ATMOSPHERIC REFRACTION",
+        "10.6 SCATTERING OF LIGHT",
+        "6.1 Tyndall Effect",
+        "6.2 Why is the colour of the clear Sky Blue?",
+        "10.4 Refraction of light through a triangular glass prism",
+        "10.5 Dispersion of white light by the glass prism",
+        "10.6 Recombination of the spectrum of white light",
+        "10.7 Rainbow in the sky",
+        "10.8 Rainbow formation",
+        "10.9\nApparent star position due to atmospheric refraction"
+      ]
+    },
+    {
+      "chapter": "11",
+      "title": "ELECTRIC CURRENT AND CIRCUIT",
+      "topics": [
+        "11.1 ELECTRIC CURRENT AND CIRCUIT",
+        "11.2 ELECTRIC POTENTIAL AND POTENTIAL DIFFERENCE",
+        "11.3 CIRCUIT DIAGRAM",
+        "11.4 OHM'S LAW",
+        "11.5 FACTORS ON WHICH THE RESISTANCE OF A CONDUCTOR DEPENDS",
+        "11.6 RESISTANCE OF A SYSTEM OF RESISTORS",
+        "11.7 HEATING EFFECT OF ELECTRIC CURRENT",
+        "11.8 ELECTRIC POWER"
+      ]
+    },
+    {
+      "chapter": "12",
+      "title": "Magnetic Effects of Electric Current",
+      "topics": [
+        "12.1 MAGNETIC FIELD AND FIELD LINES",
+        "12.2 MAGNETIC FIELD DUE TO A CURRENT-CARRYING CONDUCTOR",
+        "2.1 Magnetic Field due to a Current through a Straight Conductor",
+        "2.2 Right-Hand Thumb Rule",
+        "2.3 Magnetic Field due to a Current through a Circular Loop",
+        "2.4 Magnetic Field due to a Current in a Solenoid",
+        "12.4 DOMESTIC ELECTRIC CIRCUITS"
+      ]
+    },
+    {
+      "chapter": "13",
+      "title": "Our Environment",
+      "topics": [
+        "13.1 ECO-SYSTEM - WHAT ARE ITS COMPONENTS?",
+        "1.1 Food Chains and Webs",
+        "13.2 HOW DO OUR ACTIVITIES AFFECT THE ENVIRONMENT?",
+        "2.1 Ozone Layer and How it is Getting Depleted",
+        "2.2 Managing the Garbage we Produce"
+      ]
+    }
+  ]
+}

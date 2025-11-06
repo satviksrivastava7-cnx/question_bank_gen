@@ -1,0 +1,124 @@
+{
+  "subject": "Mathematics",
+  "chapters": [
+    {
+      "chapter": "1",
+      "title": null,
+      "topics": [
+        "1.2 The Fundamental Theorem of Arithmetic",
+        "1.3 Revisiting Irrational Numbers"
+      ]
+    },
+    {
+      "chapter": "2",
+      "title": "Polynomials",
+      "topics": [
+        "2.2 Geometrical Meaning of the Zeroes of a Polynomial",
+        "2.3 Relationship between Zeroes and Coefficients of a Polynomial"
+      ]
+    },
+    {
+      "chapter": "3",
+      "title": "Pair of Linear Equations in Two Variables",
+      "topics": [
+        "3.2 Graphical Method of Solution of a Pair of Linear Equations",
+        "3.3 Algebraic Methods of Solving a Pair of Linear Equations",
+        "3.1 Substitution Method :",
+        "3.2 Elimination Method"
+      ]
+    },
+    {
+      "chapter": "4",
+      "title": "Quadratic Equations",
+      "topics": [
+        "4.2 Quadratic Equations",
+        "4.3 Solution of a Quadratic Equation by Factorisation",
+        "4.4 Nature of Roots"
+      ]
+    },
+    {
+      "chapter": "5",
+      "title": "Arithmetic Progressions",
+      "topics": [
+        "5.2 Arithmetic Progressions",
+        "5.3 nth Term of an AP",
+        "5.4 Sum of First $n$ Terms of an AP"
+      ]
+    },
+    {
+      "chapter": "6",
+      "title": "TRIANGLES",
+      "topics": [
+        "6.1 Introduction",
+        "6.2 Similar Figures",
+        "6.3 Similarity of Triangles",
+        "6.4 Criteria for Similarity of Triangles"
+      ]
+    },
+    {
+      "chapter": "7",
+      "title": "Coordinate Geometry",
+      "topics": [
+        "7.1 Introduction",
+        "7.2 Distance Formula",
+        "7.3 Section Formula"
+      ]
+    },
+    {
+      "chapter": "8",
+      "title": "INTRODUCTION TO TrigonOMETRY",
+      "topics": [
+        "8.1 Introduction",
+        "8.2 Trigonometric Ratios",
+        "8.3 Trigonometric Ratios of Some Specific Angles",
+        "8.4 Trigonometric Identities"
+      ]
+    },
+    {
+      "chapter": "9",
+      "title": "Some Applications of Trigonometry",
+      "topics": [
+        "9.1 Heights and Distances"
+      ]
+    },
+    {
+      "chapter": "10",
+      "title": "Tangents to a Circle",
+      "topics": [
+        "10.1 Tangent to a Circle",
+        "10.2 Number of Tangents from a Point on a Circle"
+      ]
+    },
+    {
+      "chapter": "11",
+      "title": "Areas Related to Circles",
+      "topics": [
+        "11.1 Areas of Sector and Segment of a Circle"
+      ]
+    },
+    {
+      "chapter": "12",
+      "title": "Surface Areas and Volumes",
+      "topics": [
+        "12.2 Surface Area of a Combination of Solids",
+        "12.3 Volume of a Combination of Solids"
+      ]
+    },
+    {
+      "chapter": "13",
+      "title": "Statistics",
+      "topics": [
+        "13.2 Mean of Grouped Data",
+        "13.3 Mode of Grouped Data",
+        "13.4 Median of Grouped Data"
+      ]
+    },
+    {
+      "chapter": "14",
+      "title": "Probability",
+      "topics": [
+        "14.1 Probability - A Theoretical Approach"
+      ]
+    }
+  ]
+}

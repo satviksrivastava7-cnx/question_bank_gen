@@ -1,0 +1,1677 @@
+{
+  "chapter_name": "chapter 10",
+  "topic_verifications": [
+    {
+      "topic": "10.1 Tangent to a Circle",
+      "mcq_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "fill_blank_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "short_answer_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "long_answer_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "overall_quality": "excellent",
+      "has_duplicates": true
+    },
+    {
+      "topic": "10.2 Number of Tangents from a Point on a Circle",
+      "mcq_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 8,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 9,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 10,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 11,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 12,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 13,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 14,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 15,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 16,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 17,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 18,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 19,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 20,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 21,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 22,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 23,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 24,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 25,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 26,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 27,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 28,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 29,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 30,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 31,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "fill_blank_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 8,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 9,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 10,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 11,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 12,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 13,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 14,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 15,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 16,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 17,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 18,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 19,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 20,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 21,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 22,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 23,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 24,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 25,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 26,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 27,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 28,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 29,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 30,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 31,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "short_answer_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 8,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 9,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 10,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 11,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 12,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 13,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 14,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 15,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 16,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 17,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 18,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 19,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 20,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 21,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 22,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 23,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "long_answer_verifications": [
+        {
+          "question_index": 0,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 1,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 2,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 3,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 4,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 5,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 6,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 7,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 8,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 9,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 10,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 11,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 12,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 13,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 14,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 15,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 16,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 17,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        }
+      ],
+      "overall_quality": "excellent",
+      "has_duplicates": true
+    }
+  ],
+  "overall_pass": false,
+  "total_issues": 0
+}
