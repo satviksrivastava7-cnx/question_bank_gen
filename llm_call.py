@@ -15,7 +15,7 @@ load_dotenv()
 class LLMClient:
     """Client for making structured LLM calls"""
 
-    def __init__(self, model_name: str = "gemini-2.0-flash-exp"):
+    def __init__(self, model_name: str = "gemini-2.0-flash"):
         """
         Initialize LLM client.
 
@@ -66,13 +66,15 @@ Return pure JSON only."""
 
         for attempt in range(max_retries):
             try:
-                # Configure generation - use JSON mode without strict schema to avoid conflicts
+                # Configure generation with max output tokens
+                # Note: response_schema causes "$defs" error with Pydantic schemas
                 generation_config = genai.GenerationConfig(
                     temperature=temperature,
                     response_mime_type="application/json",
+                    max_output_tokens=8192,  # Maximum for gemini-2.0-flash
                 )
 
-                # Generate response with repeat penalty to avoid truncation
+                # Generate response
                 response = self.model.generate_content(
                     full_prompt,
                     generation_config=generation_config,
@@ -135,7 +137,7 @@ CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no additional tex
                 generation_config = genai.GenerationConfig(
                     temperature=temperature,
                     response_mime_type="application/json",
-                    max_output_tokens=32768,
+                    #max_output_tokens=32768,
                 )
 
                 response = self.model.generate_content(
@@ -159,7 +161,7 @@ CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no additional tex
 
     def _clean_json_response(self, text: str) -> str:
         """
-        Clean JSON response by removing markdown formatting.
+        Clean JSON response by removing markdown formatting and fixing escape sequences.
 
         Args:
             text: Raw response text
@@ -167,6 +169,8 @@ CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no additional tex
         Returns:
             Cleaned JSON string
         """
+        import re
+
         # Remove markdown code blocks
         if text.startswith('```json'):
             text = text[7:]
@@ -175,9 +179,12 @@ CRITICAL: Return ONLY valid JSON. No markdown, no code blocks, no additional tex
         if text.endswith('```'):
             text = text[:-3]
 
-        # Remove control characters that break JSON
-        import re
-        text = re.sub(r'[\x00-\x1f\x7f-\x9f]', ' ', text)
+        # Remove control characters except newline and tab
+        # Keep \n (\x0a) and \t (\x09) as they're valid in JSON strings
+        text = re.sub(r'[\x00-\x08\x0b-\x1f\x7f-\x9f]', ' ', text)
+
+        # Try to parse and let JSON handle the rest
+        # If it fails, it will be caught by the validation layer
 
         return text.strip()
 

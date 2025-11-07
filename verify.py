@@ -42,7 +42,7 @@ def verify_topic_questions(
             system_prompt=VERIFICATION_SYSTEM_PROMPT,
             user_prompt=user_prompt,
             response_schema=TopicVerification,
-            temperature=0.3  # Lower temperature for more consistent verification
+            temperature=0.4  # Lower temperature for more consistent verification
         )
 
         # Log results

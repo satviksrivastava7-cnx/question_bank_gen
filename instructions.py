@@ -65,9 +65,10 @@ Short Answer:
 - Be specific about what's being asked
 
 Long Answer:
-- Require 5-8 sentence detailed responses
-- Should test higher-order thinking
-- Reference answer should be comprehensive
+- Require higher-order thinking and synthesis
+- Provide 3-6 concise reference points the answer must cover
+- Each point should highlight a distinct concept, step, or rationale
+- Maintain logical progression from introduction through conclusion
 - May involve multiple concepts or steps
 
 IMPORTANT RULES:
@@ -78,12 +79,16 @@ IMPORTANT RULES:
 - Use proper grammar, spelling, and punctuation
 - Format numbers and units correctly
 - Ensure all required fields are populated
+
+NOTE - VERY IMPORTANT RULE IS TO UTILIZE THE ENTIRE CONTENT OF THE TOPIC. DO NOT MISS ANYTHING AND DO NOT REPEAT ANYTHING.
 """
 
 QUESTION_GENERATION_USER_TEMPLATE = """Generate a comprehensive question bank for the following topic.
 
 TOPIC: {topic}
-
+CLASS: {class_name}
+SUBJECT: {subject_name}
+CHAPTER: {chapter_name}
 CONTENT:
 {content}
 
@@ -110,7 +115,61 @@ AVOID:
 - Duplicate information across questions
 
 Return ONLY valid JSON matching the schema. Do not include any markdown formatting or additional text.
+
+IMPORTANT: Ensure all strings in JSON are properly escaped. Avoid using backslashes (\) in question text unless necessary. If you must use special characters, ensure they are properly JSON-escaped.
 """
+
+QUESTION_GENERATION_SECTION_TEMPLATE = """Generate {questions_per_level} {label} for each Bloom's taxonomy level for the topic below.
+
+TOPIC: {topic}
+CLASS: {class_name}
+SUBJECT: {subject_name}
+CHAPTER: {chapter_name}
+CONTENT:
+{content}
+
+STRUCTURE REQUIREMENTS:
+- Respond with a JSON object that has a single top-level key "{output_key}".
+- The value must be an array of exactly 6 items in this order: ["remember", "understand", "apply", "analyze", "evaluate", "create"].
+- Each array item MUST contain:
+  - "bloom_taxonomy": the matching Bloom's level string.
+  - "questions": an array with exactly {questions_per_level} question objects.
+- Every question object must include: {requirements}
+- Set "variations": [] for every question (variations are added later).
+
+QUALITY RULES:
+- Questions for a given Bloom level must reflect that level's cognitive demand.
+- Cover distinct concepts from the topic across the {questions_per_level} questions.
+- No duplicates or near duplicates within or across Bloom levels.
+- Use professional, age-appropriate language and correct formatting.
+- Ensure MCQ options and answers align exactly when applicable.
+
+Return ONLY valid JSON with no extra text, explanations, or markdown.
+"""
+
+QUESTION_TYPE_CONFIG = {
+    "MCQs": {
+        "label": "multiple-choice (MCQ) questions",
+        "output_key": "MCQs",
+        "requirements": "question, options (exactly 4 distinct strings), answer (must match one option exactly), explanation (1-2 sentences)"
+    },
+    "fill_in_the_blanks": {
+        "label": "fill-in-the-blank questions",
+        "output_key": "fill_in_the_blanks",
+        "requirements": "question containing _____ to mark the blank, answer (1-3 words), explanation (1-2 sentences)"
+    },
+    "short_answer": {
+        "label": "short answer questions",
+        "output_key": "short_answer",
+        "requirements": "question prompting a 2-4 sentence response, reference_answer with the expected reply"
+    },
+    "long_answer": {
+        "label": "long answer questions",
+        "output_key": "long_answer",
+        "requirements": "question prompting an extended response, reference_points (3-6 concise bullet strings outlining the must-include ideas), optional reference_answer string (leave empty when using reference_points)",
+        "extra_notes": "Each reference point must stay under 25 words. Set \"reference_answer\": \"\" unless a legacy answer is absolutely necessary."
+    },
+}
 
 # ============================================================================
 # Verification Prompts
@@ -156,7 +215,7 @@ VERIFICATION CRITERIA:
 7. ANSWER SPECIFIC:
    - Fill-in-blank: Single clear answer
    - Short answer: 2-4 sentences
-   - Long answer: 5-8 sentences, comprehensive
+   - Long answer: Outline includes 3-6 reference points covering the full expected response
 
 ISSUE SEVERITY LEVELS:
 
@@ -239,9 +298,10 @@ For Fill in the Blanks:
 - Vary the sentence structure
 - Keep the answer compatible (may need to change answer too)
 
-For Answer Questions:
+For Short / Long Answer Questions:
 - Vary the question phrasing
-- Reference answer should guide similar length response
+- Keep the same expected depth (2-4 sentences for short answer)
+- Maintain the same reference points outline for long answer
 
 QUALITY CHECK:
 Each variation should:
@@ -276,13 +336,16 @@ Example: ["Variation 1", "Variation 2", "Variation 3", "Variation 4", "Variation
 # Helper Functions
 # ============================================================================
 
-def get_question_generation_prompt(topic: str, content: str, questions_per_level: int = 5, previous_questions: str = "") -> str:
+def get_question_generation_prompt(topic: str, content: str, class_name: str, subject_name: str, chapter_name: str, questions_per_level: int = 5, previous_questions: str = "") -> str:
     """Get formatted question generation prompt"""
     total_questions = questions_per_level * 6 * 4  # levels * types
 
     base_prompt = QUESTION_GENERATION_USER_TEMPLATE.format(
         topic=topic,
         content=content,
+        class_name=class_name,
+        subject_name=subject_name,
+        chapter_name=chapter_name,
         questions_per_level=questions_per_level,
         total_questions=total_questions
     )
@@ -296,6 +359,38 @@ Generate COMPLETELY DIFFERENT questions that cover new concepts and angles not c
 """
 
     return base_prompt
+
+
+def get_section_generation_prompt(
+    question_type_key: str,
+    topic: str,
+    content: str,
+    class_name: str,
+    subject_name: str,
+    chapter_name: str,
+    questions_per_level: int = 5
+) -> str:
+    """Build a per-question-type generation prompt."""
+    if question_type_key not in QUESTION_TYPE_CONFIG:
+        raise ValueError(f"Unknown question type key: {question_type_key}")
+
+    config = QUESTION_TYPE_CONFIG[question_type_key]
+    prompt = QUESTION_GENERATION_SECTION_TEMPLATE.format(
+        label=config["label"],
+        output_key=config["output_key"],
+        requirements=config["requirements"],
+        topic=topic,
+        content=content,
+        class_name=class_name,
+        subject_name=subject_name,
+        chapter_name=chapter_name,
+        questions_per_level=questions_per_level
+    )
+    extra = config.get("extra_notes")
+    if extra:
+        prompt += f"\nADDITIONAL RULES FOR THIS QUESTION TYPE:\n{extra}\n"
+    return prompt
+
 
 def get_verification_prompt(topic: str, questions_json: str) -> str:
     """Get formatted verification prompt"""

@@ -12,9 +12,16 @@ from pathlib import Path
 import time
 from typing import List
 
-from models import ChapterQuestions, TopicQuestions
+from models import (
+    ChapterQuestions,
+    TopicQuestions,
+    MCQSectionResponse,
+    FillBlankSectionResponse,
+    ShortAnswerSectionResponse,
+    LongAnswerSectionResponse
+)
 from llm_call import get_llm_client
-from instructions import QUESTION_GENERATION_SYSTEM_PROMPT, get_question_generation_prompt
+from instructions import QUESTION_GENERATION_SYSTEM_PROMPT, get_section_generation_prompt
 from utils import (
     save_json,
     save_backup_txt,
@@ -23,9 +30,9 @@ from utils import (
     read_syllabus_file,
     load_json
 )
+
 from verify import verify_chapter_questions
 from variate import add_variations_to_chapter
-
 
 def extract_topic_content(full_content: str, topic_name: str, max_chars: int = 3000) -> str:
     """
@@ -88,129 +95,62 @@ def extract_topic_content(full_content: str, topic_name: str, max_chars: int = 3
 def generate_questions_for_topic(
     topic_name: str,
     topic_content: str,
+    class_name: str,
+    subject_name: str,
+    chapter_name: str,
     questions_per_level: int = 5
 ) -> TopicQuestions:
-    """
-    Generate questions for a single topic.
-
-    To avoid JSON truncation, we generate 2 questions per level per type,
-    then call multiple times to reach the target.
-
-    Args:
-        topic_name: Name of the topic
-        topic_content: Content/description of the topic
-        questions_per_level: Target questions per level
-
-    Returns:
-        TopicQuestions with all generated questions
-    """
+    """Generate questions for a single topic."""
     print(f"    Generating questions for: {topic_name}")
 
     llm_client = get_llm_client()
 
-    # Generate in batches of 2 questions per level to avoid truncation
-    # We'll make multiple calls and merge results
-    questions_per_batch = 2
-    num_batches = (questions_per_level + questions_per_batch - 1) // questions_per_batch
+    section_schemas = [
+        ("MCQs", "MCQ", MCQSectionResponse, "MCQs"),
+        ("fill_in_the_blanks", "Fill-in-the-Blank", FillBlankSectionResponse, "fill_in_the_blanks"),
+        ("short_answer", "Short Answer", ShortAnswerSectionResponse, "short_answer"),
+        ("long_answer", "Long Answer", LongAnswerSectionResponse, "long_answer"),
+    ]
 
-    all_batches = []
+    section_results = {}
+    questions_per_type = questions_per_level * 6
 
-    for batch_num in range(num_batches):
-        # Determine how many questions to generate in this batch
-        remaining = questions_per_level - (batch_num * questions_per_batch)
-        batch_size = min(questions_per_batch, remaining)
-
-        if batch_size <= 0:
-            break
-
-        print(f"      Batch {batch_num + 1}/{num_batches}: generating {batch_size} q/level...")
+    for section_key, display_name, schema, attr in section_schemas:
+        print(f"      -> {display_name} questions")
+        section_prompt = get_section_generation_prompt(
+            question_type_key=section_key,
+            topic=topic_name,
+            content=topic_content,
+            class_name=class_name,
+            subject_name=subject_name,
+            chapter_name=chapter_name,
+            questions_per_level=questions_per_level
+        )
 
         try:
-            # Build summary of previous questions to avoid duplicates
-            previous_questions_summary = ""
-            if all_batches:
-                prev_questions = []
-                for prev_batch in all_batches:
-                    # Get sample questions from previous batches
-                    for bloom_group in prev_batch.MCQs:
-                        for q in bloom_group.questions[:2]:  # First 2 questions per level
-                            prev_questions.append(f"- {q.question}")
-                    if len(prev_questions) >= 10:  # Limit to 10 examples
-                        break
-                previous_questions_summary = "\n".join(prev_questions[:10])
-
-            # Get prompt for this batch with previous questions context
-            user_prompt = get_question_generation_prompt(
-                topic_name,
-                topic_content,
-                batch_size,
-                previous_questions_summary
-            )
-
-            # Generate questions with moderate temperature for diversity
-            batch_questions = llm_client.generate_structured(
+            section_response = llm_client.generate_structured(
                 system_prompt=QUESTION_GENERATION_SYSTEM_PROMPT,
-                user_prompt=user_prompt,
-                response_schema=TopicQuestions,
+                user_prompt=section_prompt,
+                response_schema=schema,
                 temperature=0.6
             )
-
-            all_batches.append(batch_questions)
-
-        except Exception as e:
-            print(f"      ✗ Batch {batch_num + 1} ERROR: {e}")
+            section_results[attr] = getattr(section_response, attr)
+            print(f"        ✓ Generated {questions_per_type} {display_name.lower()} questions")
+        except Exception as section_error:
+            print(f"        ✗ ERROR generating {display_name.lower()} questions: {section_error}")
             raise
 
-    # Merge all batches into one TopicQuestions object
-    if not all_batches:
-        raise ValueError("No questions generated")
+    total_questions = questions_per_type * len(section_schemas)
+    print(f"      ✓ Combined total: {total_questions} questions (4 types × 6 levels × {questions_per_level} questions)")
 
-    merged = merge_topic_batches(all_batches)
-
-    total_questions = questions_per_level * 6 * 4
-    print(f"      ✓ Generated {total_questions} questions (4 types × 6 levels × {questions_per_level} questions)")
-
-    return merged
-
-
-def merge_topic_batches(batches: List[TopicQuestions]) -> TopicQuestions:
-    """
-    Merge multiple TopicQuestions batches into one.
-
-    Args:
-        batches: List of TopicQuestions from different batches
-
-    Returns:
-        Merged TopicQuestions
-    """
-    if not batches:
-        raise ValueError("No batches to merge")
-
-    if len(batches) == 1:
-        return batches[0]
-
-    # Start with first batch
-    merged = batches[0]
-
-    # Merge remaining batches
-    for batch in batches[1:]:
-        # Merge MCQs
-        for i, bloom_group in enumerate(batch.MCQs):
-            merged.MCQs[i].questions.extend(bloom_group.questions)
-
-        # Merge fill in the blanks
-        for i, bloom_group in enumerate(batch.fill_in_the_blanks):
-            merged.fill_in_the_blanks[i].questions.extend(bloom_group.questions)
-
-        # Merge short answer
-        for i, bloom_group in enumerate(batch.short_answer):
-            merged.short_answer[i].questions.extend(bloom_group.questions)
-
-        # Merge long answer
-        for i, bloom_group in enumerate(batch.long_answer):
-            merged.long_answer[i].questions.extend(bloom_group.questions)
-
-    return merged
+    return TopicQuestions(
+        topic=topic_name,
+        content=topic_content,
+        MCQs=section_results["MCQs"],
+        fill_in_the_blanks=section_results["fill_in_the_blanks"],
+        short_answer=section_results["short_answer"],
+        long_answer=section_results["long_answer"]
+    )
 
 
 def process_chapter(chapter_dir: Path, skip_if_exists: bool = True) -> bool:
@@ -323,7 +263,14 @@ def process_chapter(chapter_dir: Path, skip_if_exists: bool = True) -> bool:
         topic_content = extract_topic_content(chapter_full_content, topic_name)
 
         try:
-            questions = generate_questions_for_topic(topic_name, topic_content, questions_per_level)
+            questions = generate_questions_for_topic(
+                topic_name,
+                topic_content,
+                class_name,
+                subject_name,
+                chapter_name,
+                questions_per_level
+            )
             topic_questions.append(questions)
 
             # Rate limiting

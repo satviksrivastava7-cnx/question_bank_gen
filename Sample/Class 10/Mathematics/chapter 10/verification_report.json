@@ -1020,7 +1020,7 @@
         }
       ],
       "overall_quality": "excellent",
-      "has_duplicates": true
+      "has_duplicates": false
     },
     {
       "topic": "10.2 Number of Tangents from a Point on a Circle",
@@ -1663,6 +1663,42 @@
         },
         {
           "question_index": 17,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 18,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 19,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 20,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 21,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 22,
+          "is_valid": true,
+          "issues": [],
+          "suggestion": null
+        },
+        {
+          "question_index": 23,
           "is_valid": true,
           "issues": [],
           "suggestion": null

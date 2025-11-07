@@ -2,7 +2,7 @@
 Pydantic models for strict JSON schema validation.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import List, Literal, Optional
 
 
@@ -39,10 +39,40 @@ class ShortAnswerQuestion(BaseModel):
 
 
 class LongAnswerQuestion(BaseModel):
-    """Long Answer Question (5-8 sentences)"""
+    """Long Answer Question (expects comprehensive outline)"""
     question: str = Field(..., description="The question text")
-    reference_answer: str = Field(..., description="Detailed answer (5-8 sentences)")
+    reference_points: List[str] = Field(
+        default_factory=list,
+        description="Key bullet points the answer must cover"
+    )
+    reference_answer: Optional[str] = Field(
+        "",
+        description="Legacy detailed answer text (optional)"
+    )
     variations: List[str] = Field(default=[], description="Question variations")
+
+    @model_validator(mode="after")
+    def _ensure_reference_content(cls, model: "LongAnswerQuestion") -> "LongAnswerQuestion":
+        """
+        Ensure we always have guidance for the answer.
+
+        - Prefer concise reference_points (3-6 items).
+        - Allow legacy reference_answer strings for backward compatibility.
+        """
+        points = [p.strip() for p in model.reference_points if p.strip()]
+        if points:
+            if not 3 <= len(points) <= 6:
+                raise ValueError("reference_points must contain between 3 and 6 concise items")
+            model.reference_points = points
+            if model.reference_answer:
+                model.reference_answer = ""
+            return model
+
+        if model.reference_answer and model.reference_answer.strip():
+            # Leave legacy content as-is (will be used downstream as fallback)
+            return model
+
+        raise ValueError("Provide either reference_points (preferred) or reference_answer text")
 
 
 # ============================================================================
@@ -54,7 +84,7 @@ class BloomTaxonomyGroup(BaseModel):
     bloom_taxonomy: Literal["remember", "understand", "apply", "analyze", "evaluate", "create"] = Field(
         ..., description="Bloom's taxonomy level"
     )
-    questions: List = Field(..., min_length=5, max_length=12, description="5-12 questions depending on topic count")
+    questions: List = Field(..., description="Questions for this Bloom's level")
 
 
 class MCQBloomGroup(BloomTaxonomyGroup):
@@ -84,12 +114,40 @@ class LongAnswerBloomGroup(BloomTaxonomyGroup):
 class TopicQuestions(BaseModel):
     """All questions for a single topic"""
     topic: str = Field(..., description="Topic name")
-    content: str = Field(..., description="Topic content/description")
+    content: Optional[str] = Field(default=None, description="Topic content/description")
     MCQs: List[MCQBloomGroup] = Field(..., min_length=6, max_length=6, description="6 Bloom's levels")
     fill_in_the_blanks: List[FillBlankBloomGroup] = Field(..., min_length=6, max_length=6)
     short_answer: List[ShortAnswerBloomGroup] = Field(..., min_length=6, max_length=6)
     long_answer: List[LongAnswerBloomGroup] = Field(..., min_length=6, max_length=6)
 
+
+# ============================================================================
+# Chapter Questions
+# ============================================================================
+
+
+# ============================================================================
+# Topic Generation Response Wrappers
+# ============================================================================
+
+class MCQSectionResponse(BaseModel):
+    """Structured response for MCQ generation"""
+    MCQs: List[MCQBloomGroup] = Field(..., min_length=6, max_length=6, description="MCQ questions across Bloom levels")
+
+
+class FillBlankSectionResponse(BaseModel):
+    """Structured response for fill-in-the-blank generation"""
+    fill_in_the_blanks: List[FillBlankBloomGroup] = Field(..., min_length=6, max_length=6, description="Fill-in-the-blank questions across Bloom levels")
+
+
+class ShortAnswerSectionResponse(BaseModel):
+    """Structured response for short answer generation"""
+    short_answer: List[ShortAnswerBloomGroup] = Field(..., min_length=6, max_length=6, description="Short answer questions across Bloom levels")
+
+
+class LongAnswerSectionResponse(BaseModel):
+    """Structured response for long answer generation"""
+    long_answer: List[LongAnswerBloomGroup] = Field(..., min_length=6, max_length=6, description="Long answer questions across Bloom levels")
 
 # ============================================================================
 # Chapter Questions

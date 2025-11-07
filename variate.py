@@ -5,11 +5,71 @@ Question variation module - generates 5 variations per question.
 from pathlib import Path
 from typing import List, Dict, Any
 import time
+import json
 
 from models import ChapterQuestions, MCQQuestion, FillInBlankQuestion, ShortAnswerQuestion, LongAnswerQuestion
 from llm_call import get_llm_client
 from instructions import VARIATION_SYSTEM_PROMPT, get_variation_prompt
 from utils import save_json
+
+
+def _normalize_variation_item(item: Any, question_type: str) -> str:
+    """
+    Convert a variation response (string/dict) into a clean string.
+    """
+    if isinstance(item, str):
+        return item.strip()
+
+    if isinstance(item, dict):
+        # Handle bundled variations like {"variation_1": "...", ...}
+        if any(key.startswith("variation_") for key in item.keys()):
+            values = [
+                str(value).strip()
+                for key, value in sorted(item.items())
+                if key.startswith("variation_") and str(value).strip()
+            ]
+            if values:
+                return " | ".join(values)
+
+        # Common text fields
+        for key in ("question", "variation_text", "variation", "text", "prompt"):
+            value = item.get(key)
+            if isinstance(value, str) and value.strip():
+                base = value.strip()
+                break
+        else:
+            base = ""
+
+        # Include options/answers for MCQs to preserve context
+        if question_type == "MCQ":
+            options = item.get("options")
+            if isinstance(options, list):
+                option_text = "; ".join(str(opt).strip() for opt in options if str(opt).strip())
+                if option_text:
+                    base = f"{base} | Options: {option_text}" if base else f"Options: {option_text}"
+            answer = item.get("answer")
+            if isinstance(answer, str) and answer.strip():
+                base = f"{base} | Answer: {answer.strip()}" if base else f"Answer: {answer.strip()}"
+
+        # Include outline data for long answers when present
+        reference_points = item.get("reference_points")
+        if isinstance(reference_points, list):
+            outline = "; ".join(str(point).strip() for point in reference_points if str(point).strip())
+            if outline:
+                base = f"{base} | Key points: {outline}" if base else f"Key points: {outline}"
+
+        reference_answer = item.get("reference_answer")
+        if isinstance(reference_answer, str) and reference_answer.strip():
+            base = f"{base} | Reference answer: {reference_answer.strip()}" if base else reference_answer.strip()
+
+        if base:
+            return base
+
+        # Fallback to JSON dump if nothing usable extracted
+        return json.dumps(item, ensure_ascii=False)
+
+    # Generic fallback
+    return str(item).strip()
 
 
 def generate_variations_for_question(
@@ -54,7 +114,7 @@ For variations:
 - Keep the blank appropriate for the concept
 - Answer may need to change to fit new context"""
 
-    elif isinstance(question, (ShortAnswerQuestion, LongAnswerQuestion)):
+    elif isinstance(question, ShortAnswerQuestion):
         question_text = question.question
         reference = question.reference_answer
         additional_info = f"""Reference Answer: {reference}
@@ -63,6 +123,20 @@ For variations:
 - Vary the question phrasing
 - Maintain the same concept being tested
 - Keep expected answer length similar"""
+
+    elif isinstance(question, LongAnswerQuestion):
+        question_text = question.question
+        if question.reference_points:
+            reference_outline = "\n".join(f"- {point}" for point in question.reference_points)
+            reference_header = f"Reference Points:\n{reference_outline}"
+        else:
+            reference_header = f"Legacy Reference Answer: {question.reference_answer or ''}"
+        additional_info = f"""{reference_header}
+
+For variations:
+- Vary the question phrasing
+- Maintain every reference point / key idea
+- Keep the expected depth and structure (introduction, development, conclusion)"""
 
     else:
         # Fallback
@@ -87,12 +161,19 @@ For variations:
         )
 
         # Extract variations
-        if isinstance(response, list):
-            variations = response
-        elif isinstance(response, dict) and 'variations' in response:
-            variations = response['variations']
+        if isinstance(response, dict) and 'variations' in response:
+            raw_variations = response['variations']
         else:
-            variations = []
+            raw_variations = response
+
+        if not isinstance(raw_variations, list):
+            raw_variations = [raw_variations]
+
+        variations = [
+            _normalize_variation_item(item, question_type)
+            for item in raw_variations
+            if _normalize_variation_item(item, question_type)
+        ]
 
         # Ensure we have 5 variations
         if len(variations) < 5:
