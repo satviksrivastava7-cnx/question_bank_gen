@@ -169,11 +169,11 @@ For variations:
         if not isinstance(raw_variations, list):
             raw_variations = [raw_variations]
 
-        variations = [
-            _normalize_variation_item(item, question_type)
-            for item in raw_variations
-            if _normalize_variation_item(item, question_type)
-        ]
+        variations = []
+        for item in raw_variations:
+            normalized = _normalize_variation_item(item, question_type)
+            if normalized:
+                variations.append(normalized)
 
         # Ensure we have 5 variations
         if len(variations) < 5:

@@ -68,6 +68,7 @@ Long Answer:
 - Require higher-order thinking and synthesis
 - Provide 3-6 concise reference points the answer must cover
 - Each point should highlight a distinct concept, step, or rationale
+- Do NOT return a full prose answer—only the essential reference points
 - Maintain logical progression from introduction through conclusion
 - May involve multiple concepts or steps
 
@@ -166,8 +167,8 @@ QUESTION_TYPE_CONFIG = {
     "long_answer": {
         "label": "long answer questions",
         "output_key": "long_answer",
-        "requirements": "question prompting an extended response, reference_points (3-6 concise bullet strings outlining the must-include ideas), optional reference_answer string (leave empty when using reference_points)",
-        "extra_notes": "Each reference point must stay under 25 words. Set \"reference_answer\": \"\" unless a legacy answer is absolutely necessary."
+        "requirements": "question prompting an extended response, reference_points (3-6 concise bullet strings outlining the must-include ideas), reference_answer must be an empty string",
+        "extra_notes": "Each reference point must stay under 20 words. Never include prose answers or explanations in reference_answer; keep it as an empty string."
     },
 }
 
@@ -215,7 +216,7 @@ VERIFICATION CRITERIA:
 7. ANSWER SPECIFIC:
    - Fill-in-blank: Single clear answer
    - Short answer: 2-4 sentences
-   - Long answer: Outline includes 3-6 reference points covering the full expected response
+   - Long answer: Outline includes only 3-6 reference points (no full prose answers)
 
 ISSUE SEVERITY LEVELS:
 

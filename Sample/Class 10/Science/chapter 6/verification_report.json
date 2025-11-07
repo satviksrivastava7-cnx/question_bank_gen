@@ -1,0 +1,88 @@
+{
+  "chapter_name": "chapter 6",
+  "topic_verifications": [
+    {
+      "topic": "6.1 ANIMALS - NERVOUS SYSTEM",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.2 COORDINATION IN PLANTS",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.3 HORMONES IN ANIMALS",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.2 Reflex arc",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.3 Human brain",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.4 The sensitive plant",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.5\nResponse of the plant to the direction of light",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.6 Plant showing geotropism",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    },
+    {
+      "topic": "6.7 Endocrine glands in human beings (a) male, (b) female",
+      "mcq_verifications": [],
+      "fill_blank_verifications": [],
+      "short_answer_verifications": [],
+      "long_answer_verifications": [],
+      "overall_quality": "fine",
+      "has_duplicates": false
+    }
+  ],
+  "overall_pass": false,
+  "total_issues": 0
+}

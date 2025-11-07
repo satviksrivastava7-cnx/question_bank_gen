@@ -4,6 +4,7 @@ Pydantic models for strict JSON schema validation.
 
 from pydantic import BaseModel, Field, model_validator
 from typing import List, Literal, Optional
+import re
 
 
 # ============================================================================
@@ -45,9 +46,9 @@ class LongAnswerQuestion(BaseModel):
         default_factory=list,
         description="Key bullet points the answer must cover"
     )
-    reference_answer: Optional[str] = Field(
-        "",
-        description="Legacy detailed answer text (optional)"
+    reference_answer: str = Field(
+        default="",
+        description="Legacy detailed answer text (optional, should remain empty)"
     )
     variations: List[str] = Field(default=[], description="Question variations")
 
@@ -56,20 +57,28 @@ class LongAnswerQuestion(BaseModel):
         """
         Ensure we always have guidance for the answer.
 
-        - Prefer concise reference_points (3-6 items).
+        - Prefer concise reference_points (1-6 items) to keep schema flexible.
         - Allow legacy reference_answer strings for backward compatibility.
         """
-        points = [p.strip() for p in model.reference_points if p.strip()]
+        points = [p.strip() for p in model.reference_points if isinstance(p, str) and p.strip()]
         if points:
-            if not 3 <= len(points) <= 6:
-                raise ValueError("reference_points must contain between 3 and 6 concise items")
-            model.reference_points = points
+            model.reference_points = points[:6]
             if model.reference_answer:
                 model.reference_answer = ""
             return model
 
-        if model.reference_answer and model.reference_answer.strip():
-            # Leave legacy content as-is (will be used downstream as fallback)
+        if model.reference_answer.strip():
+            text = model.reference_answer.strip()
+            candidate_points = [
+                sentence.strip()
+                for sentence in re.split(r'(?<=[.!?])\s+', text)
+                if sentence.strip()
+            ]
+            if candidate_points:
+                model.reference_points = candidate_points[:6]
+                model.reference_answer = ""
+                return model
+            # If still insufficient, keep legacy answer for backward compatibility
             return model
 
         raise ValueError("Provide either reference_points (preferred) or reference_answer text")

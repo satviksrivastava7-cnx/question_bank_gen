@@ -8,8 +8,71 @@ from pydantic import BaseModel
 import json
 import os
 from dotenv import load_dotenv
+from copy import deepcopy
 
 load_dotenv()
+
+
+def _inline_schema_refs(schema: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Gemini's response_schema does not support $defs/$ref, so inline them.
+    """
+    schema = deepcopy(schema)
+    definitions = schema.pop("$defs", {})
+
+    strip_keys = {
+        "title",
+        "description",
+        "examples",
+        "default",
+        "minItems",
+        "maxItems",
+        "minLength",
+        "maxLength",
+    }
+
+    def resolve(node: Any) -> Any:
+        if isinstance(node, dict):
+            if "$ref" in node:
+                ref = node["$ref"]
+                extras = {key: value for key, value in node.items() if key != "$ref"}
+                if ref.startswith("#/$defs/"):
+                    key = ref.split("/")[-1]
+                    target = definitions.get(key)
+                    if target is None:
+                        resolved = {}
+                    else:
+                        resolved = resolve(deepcopy(target))
+                else:
+                    resolved = {}
+
+                if extras:
+                    resolved_extras = {key: resolve(value) for key, value in extras.items()}
+                    if isinstance(resolved, dict):
+                        resolved.update(resolved_extras)
+                    else:
+                        resolved = resolved_extras
+                return resolved
+
+            return {key: resolve(value) for key, value in node.items()}
+
+        if isinstance(node, list):
+            return [resolve(item) for item in node]
+
+        return node
+
+    def strip_meta(node: Any) -> Any:
+        if isinstance(node, dict):
+            return {
+                key: strip_meta(value)
+                for key, value in node.items()
+                if key not in strip_keys
+            }
+        if isinstance(node, list):
+            return [strip_meta(item) for item in node]
+        return node
+
+    return strip_meta(resolve(schema))
 
 
 class LLMClient:
@@ -64,13 +127,15 @@ CRITICAL: Return ONLY valid JSON that matches this exact schema:
 Do not include any markdown formatting, code blocks, or additional text.
 Return pure JSON only."""
 
+        schema_dict = _inline_schema_refs(response_schema.model_json_schema())
+
         for attempt in range(max_retries):
             try:
                 # Configure generation with max output tokens
-                # Note: response_schema causes "$defs" error with Pydantic schemas
                 generation_config = genai.GenerationConfig(
                     temperature=temperature,
                     response_mime_type="application/json",
+                    response_schema=schema_dict,
                     max_output_tokens=8192,  # Maximum for gemini-2.0-flash
                 )
 

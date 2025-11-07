@@ -254,6 +254,7 @@ def process_chapter(chapter_dir: Path, skip_if_exists: bool = True) -> bool:
     print(f"  {'-'*76}")
 
     topic_questions = []
+    failed_topics = []
 
     for idx, topic_name in enumerate(topics_list, 1):
         # Topics from syllabus.json are just strings
@@ -278,7 +279,17 @@ def process_chapter(chapter_dir: Path, skip_if_exists: bool = True) -> bool:
 
         except Exception as e:
             print(f"      ✗ Failed to generate questions: {e}")
-            return False
+            failed_topics.append(topic_name)
+            continue
+
+    if failed_topics:
+        print(f"\n  ⚠ WARNING: Failed to generate {len(failed_topics)} topics")
+        for missing_topic in failed_topics:
+            print(f"    - {missing_topic}")
+
+    if not topic_questions:
+        print("\n  ✗ ERROR: No topics were generated successfully; skipping chapter")
+        return False
 
     # Create chapter questions object
     chapter_questions = ChapterQuestions(
